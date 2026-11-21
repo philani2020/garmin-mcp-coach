@@ -1,0 +1,21 @@
+[project]
+name = "garmin-mcp-coach"
+version = "0.1.0"
+description = "MCP server for the Garmin Connect Personal API, for Claude and ChatGPT"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=2.0",
+    "httpx>=0.27",
+    "python-dotenv>=1.0",
+]
+
+[project.scripts]
+garmin-mcp = "garmin_mcp.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/garmin_mcp"]
